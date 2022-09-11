@@ -1,0 +1,24 @@
+<!-- Usamos array para passar outros argumentos nas rotas -->
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/sobre" [routerLinkActive]="['activeTwo']" [routerLinkActiveOptions]="{exact: true}">
+          Sobre
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/paginaNaoEncontrada" [routerLinkActive]="['activeThree']" [routerLinkActiveOptions]="{exact: true}">
+          404
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
