@@ -14,8 +14,19 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'sobre/:id/:username',
+    path: 'sobre',
     component: sobre,
+    children: [
+      {
+        path: ':id/:username',
+        component: sobre,
+      },
+    ],
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'paginaNaoEncontrada',
@@ -29,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

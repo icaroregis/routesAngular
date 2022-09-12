@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sobre',
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./sobre.component.scss'],
 })
 export class SobreComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     /* parametros passados pela rota */
@@ -21,5 +21,10 @@ export class SobreComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe({
       next: (response) => console.log(response),
     });
+
+    // setInterval(() => {
+    //   this.router.navigate(['paginaNaoEncontrada']);
+    //   // this.router.navigateByUrl();
+    // }, 5000);
   }
 }

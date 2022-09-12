@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
